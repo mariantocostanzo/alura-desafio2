@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: "Times New Roman", Times, serif;
+    --primary-color: #3388BB;
+    --shadow-color: #dcdcdc;
+}
+
+body {
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: clamp(630px, 91vh, 91vh);
+    margin: 0 auto;
+}
+
+.title {  
+    color: rgb(4, 4, 4);
+    font-family: var(--font-family);
+    font-size: 40px;
+    margin: 0 auto;
+}
+
+/* Entrada de texto */
+
+label {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
+.bar {
+    border: 1px solid var(--shadow-color);
+    border-radius: 30px;
+    margin: 20px auto;
+    width: 400px;
+}
+
+.bar:hover {
+    box-shadow: 1px 1px 8px 1px var(--shadow-color);
+}
+  
+.bar:focus-within {
+    box-shadow: 2px 5px 15px var(--shadow-color);
+    outline: none;
+}
+
+#input-text {
+    border: none;
+    font-size: 15px;
+    height: 43px;
+    margin: auto 25px;
+    outline: none;
+    width: 330px;
+}
+
+#check-mark {
+    color: var(--primary-color);
+    font-size: 30px;   
+    margin: 10px auto;
+    visibility: hidden;
+}
+
+#check-mark.show {
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    visibility: visible; 
+}
+  
+/* Animaciones para desvanecer y restablecer la división "check-mark" */
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+  
+#play {
+    display: none;
+}
+
+#lives, #clue {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin: 10px auto;
+}
+
+#my-word {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+}
+  
+#my-word li {
+    display: inline-block;
+    font-size: 1.6em;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+}
+
+canvas {
+    box-shadow: 2px 5px 15px var(--shadow-color);
+    height: 200px;
+    margin: 13px auto;
+    padding: 15px;
+    width: 330px;
+}
+
+button {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 7px; 
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px 5px;
+    padding: 10px 20px;
+}
+
+button:hover, button:focus {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Teclado en la pantalla */
+
+#keyboard {
+    height: 155px;
+    margin: 10px auto;
+    text-align: center;
+    width: 400px;
+}
+
+#alfabeto {
+    margin: 5px 5px 5px 50px;
+    padding: 0;
+}
+
+#alfabeto::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+  
+#alfabeto li {
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    float: left;
+    font-family: var(--font-family);
+    font-size: 18px;
+    height: 10%;
+    list-style: none;
+    margin: 0 10px 10px 0;
+    padding: 4px;
+    width: 10%;
+}
+
+#alfabeto li:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.defuse {
+    cursor: default;
+    opacity: 0.3;
+}
+
+#game-options {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Pie de página */
+
+footer {
+    color: #666;
+    font-size: 15px;
+    margin-top: 55px;
+    position: relative;
+    text-align: center;
+    width: 100%;  
+}
+
+
+
+@media screen and (orientation: portrait) and (max-width: 700px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .bar {
+        width: 350px;
+    }
+
+    #input-text {
+        height: 50px;
+        width: 80%;
+    }
+
+    #lives, #clue {
+        font-size: 23px;
+    }
+
+    #my-word li {
+        font-size: 1.4em;
+        padding: 0 5px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .bar, canvas {
+        width: 90vw;
+    }
+
+    #lives, #clue {
+        font-size: 21px;
+        width: 90vw;
+    }
+
+    #my-word li {
+        font-size: 1.1em;
+        padding: 0 4px;
+    }
+    
+    footer {
+        font-size: 13px;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (orientation: landscape) and (hover: none) and (max-width: 600px) {
+    footer {
+        font-size: 11px;
+    }
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Juego del ahorcado</title>
+</head>
+
+<body background="js/img/fondo.jpg">
+    <div id="box">
+        <div id="start">
+            <div class="title">
+                <h1>Ahorcado</h1>
+            </div>
+            <button type="button" id="iniciar-juego">Jugar</button>
+
+            <div class="bar">
+                <label for="input-text">Entrada de texto para nuevas palabras</label>
+                <input id="input-text" type="text" name="entrada-texto" placeholder="Agrega una nueva palabra"
+                    autocomplete="off">
+            </div>
+            <button type="button" id="add-Btn">Agregar</button>
+            <div id="check-mark">&#10004;</div>
+        </div>
+
+        <div id="play">
+            <div>
+                <p id="lives"></p>
+                <div id="underscore"></div>
+                <p id="clue">Pista:</p>
+                <canvas id="screen">Tu navegador no es compatible con la etiqueta canvas de HTML5</canvas>
+            </div>
+
+            <div id="keyboard"></div>
+            <div id="game-options">
+                <button type="button" id="home">Inicio</button>
+                <button type="button" id="retry">Jugar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Desarrollado por Maria Costanzo</h3>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
+        integrity="sha384-RIQuldGV8mnjGdob13cay/K1AJa+LR7VKHqSXrrB5DPGryn4pMUXRLh92Ev8KlGF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
